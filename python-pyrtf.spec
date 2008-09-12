@@ -1,20 +1,19 @@
-%define name	PyRTF
-%define version	0.45
-%define release %mkrel 1
+%define oname	PyRTF
 
-Name: 	 	%{name}
+Name: 	 	python-pyrtf
 Summary: 	Python module to generate RTF documents
-Version: 	%{version}
-Release: 	%{release}
-
-Source:		%{name}-%{version}.tar.bz2
+Version: 	0.45
+Release: 	%{mkrel 2}
+Source0:	http://downloads.sourceforge.net/pyrtf/%{oname}-%{version}.tar.bz2
 URL:		http://pyrtf.sourceforge.net/
-License:	GPL
+License:	GPL+
 Group:		Development/Python
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	python-devel
-Requires:	python
+%{py_requires}
 BuildArch:	noarch
+Obsoletes:	PyRTF < %{version}-%{release}
+Provides:	PyRTF = %{version}-%{release}
 
 %description
 PyRTF is a set of python classes that make it possible to produce RTF
@@ -22,16 +21,16 @@ documents from python programs. The library has no external dependencies
 and has proved reliable and fast.
 
 %prep
-%setup -q
+%setup -q -n %{oname}-%{version}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT
+rm -rf %{buildroot}
+python setup.py install --root=%{buildroot} --compile --optimize=2
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{py_puresitedir}/%name
-%{py_puresitedir}/%name-%version-py2.5.egg-info
+%{py_puresitedir}/%{oname}
+%{py_puresitedir}/%{oname}-%{version}-py%{pyver}.egg-info
