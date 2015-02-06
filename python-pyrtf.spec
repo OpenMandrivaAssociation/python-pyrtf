@@ -3,7 +3,7 @@
 Name: 	 	python-pyrtf
 Summary: 	Python module to generate RTF documents
 Version: 	0.45
-Release: 	6
+Release: 	7
 Source0:	http://downloads.sourceforge.net/pyrtf/%{oname}-%{version}.tar.bz2
 URL:		http://pyrtf.sourceforge.net/
 License:	GPL+
