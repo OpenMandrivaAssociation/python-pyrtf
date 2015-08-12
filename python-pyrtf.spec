@@ -8,8 +8,7 @@ Source0:	http://downloads.sourceforge.net/pyrtf/%{oname}-%{version}.tar.bz2
 URL:		http://pyrtf.sourceforge.net/
 License:	GPL+
 Group:		Development/Python
-BuildRequires:	python-devel
-%{py_requires}
+BuildRequires:	pkgconfig(python2)
 BuildArch:	noarch
 Obsoletes:	PyRTF < %{version}-%{release}
 Provides:	PyRTF = %{version}-%{release}
