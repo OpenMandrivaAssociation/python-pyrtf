@@ -5,7 +5,7 @@ Summary: 	Python module to generate RTF documents
 Version: 	0.45
 Release: 	8
 Source0:	http://downloads.sourceforge.net/pyrtf/%{oname}-%{version}.tar.bz2
-URL:		http://pyrtf.sourceforge.net/
+URL:		https://pyrtf.sourceforge.net/
 License:	GPL+
 Group:		Development/Python
 BuildRequires:	pkgconfig(python2)
